@@ -8,7 +8,6 @@ class NavigationWidget extends StatelessWidget {
     return PreferredSize(
       preferredSize: const Size.fromHeight(100),
       child: AppBar(
-        backgroundColor: Colors.white,
         elevation: 0,
         leading: Padding(
           padding: const EdgeInsets.only(left: 16.0, top: 12.0),
