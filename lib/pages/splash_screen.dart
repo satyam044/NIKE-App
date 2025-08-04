@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:nike_app/pages/home_page.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
@@ -71,6 +72,9 @@ class _ImageTransitionState extends State<ImageTransition> {
         });
       } else {
         timer.cancel();
+        Navigator.of(
+          context,
+        ).pushReplacement(MaterialPageRoute(builder: (context) => HomePage()));
       }
     });
   }

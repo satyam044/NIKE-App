@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nike_app/pages/home_page.dart';
 import 'package:nike_app/pages/splash_screen.dart';
 
 void main() {
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
           brightness: Brightness.light,
         ),
       ),
-      home: SplashScreen(),
+      home: HomePage(),
     );
   }
 }
