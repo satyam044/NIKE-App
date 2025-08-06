@@ -1,7 +1,7 @@
 class CardModel {
   final String product_name;
   final String description;
-  final int sizes;
+  final List<int> sizes;
   final double price;
   final String image;
 
@@ -13,13 +13,14 @@ class CardModel {
     required this.image,
   });
 
-  factory CardModel.fromJson(Map<dynamic, dynamic> json) {
+  factory CardModel.fromJson(Map<String, dynamic> json) {
     return CardModel(
       product_name: json['product_name'],
       description: json['description'],
-      sizes: json['sizes'],
-      price: json['price'],
+      sizes: List<int>.from(json['sizes']),
+      price: (json['price'] as num).toDouble(),
       image: json['image'],
     );
   }
+
 }

@@ -10,21 +10,23 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: Column(
-          children: [
-            NavigationWidget(),
-            SizedBox(height: 20),
-            Padding(padding: const EdgeInsets.all(18.0),
-              child: Column(
-                children: [
-                  SearchBarWidget(),
-                  BannerWidget(),
-                  CardsContainerWidget(),
-                ],
-              ),
-            )
-          ],
+      body: SingleChildScrollView(
+        child: SafeArea(
+          child: Column(
+            children: [
+              NavigationWidget(),
+              SizedBox(height: 20),
+              Padding(padding: const EdgeInsets.all(18.0),
+                child: Column(
+                  children: [
+                    SearchBarWidget(),
+                    BannerWidget(),
+                    CardsContainerWidget(),
+                  ],
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );
