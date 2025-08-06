@@ -17,6 +17,7 @@ class CardsWidget extends StatefulWidget {
 }
 
 class _CardsWidgetState extends State<CardsWidget> {
+  List cardData = 
   @override
   Widget build(BuildContext context) {
     return Container(
