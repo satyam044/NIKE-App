@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:nike_app/widgets/cards.dart';
+import 'package:nike_app/widgets/cards_widget.dart';
 import '../models/card_model.dart';
 
 class CardsContainerWidget extends StatefulWidget {

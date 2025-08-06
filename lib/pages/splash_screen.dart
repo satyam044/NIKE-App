@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nike_app/pages/home_page.dart';
+import 'package:nike_app/pages/shoe_page.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
@@ -36,7 +37,7 @@ class SplashScreen extends StatelessWidget {
                   alignment: Alignment.bottomRight,
                   child: GestureDetector(
                     onTap: () {
-                      Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => HomePage()));
+                      Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => ShoePage()));
                     },
                     child: Container(
                       height: 90,
