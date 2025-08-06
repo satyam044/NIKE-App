@@ -14,6 +14,7 @@ class HomePage extends StatelessWidget {
             SizedBox(height: 20),
             Padding(padding: const EdgeInsets.all(18.0), child: SearchBar()),
             Padding(padding: const EdgeInsets.all(18.0), child: Banner()),
+            Padding(padding: const EdgeInsets.all(18.0), child: Banner()),
           ],
         ),
       ),

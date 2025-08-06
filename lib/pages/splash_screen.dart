@@ -1,4 +1,3 @@
-import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:nike_app/pages/home_page.dart';
 
@@ -32,63 +31,32 @@ class SplashScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                ImageTransition(),
+                Image.asset('assets/images/splashShoes.webp'),
+                Container(
+                  alignment: Alignment.bottomRight,
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => HomePage()));
+                    },
+                    child: Container(
+                      height: 90,
+                      width: 90,
+                      alignment: Alignment.center,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.all(Radius.circular(50)),
+                        color: Colors.black,
+                      ),
+                      child: Text(
+                        'Go',
+                        style: TextStyle(color: Colors.white, fontSize: 40, fontWeight: FontWeight.w400),
+                      ), // Explicitly set text color
+                    ),
+                  ),
+                ),
               ],
             ),
           ),
         ),
-      ),
-    );
-  }
-}
-
-class ImageTransition extends StatefulWidget {
-  const ImageTransition({super.key});
-
-  @override
-  State<ImageTransition> createState() => _ImageTransitionState();
-}
-
-class _ImageTransitionState extends State<ImageTransition> {
-  final List<String> _imagePaths = [
-    'assets/images/splashShoes.webp',
-    'assets/images/splashClothes.png',
-    'assets/images/logo.png',
-  ];
-
-  int _currentIdx = 0;
-
-  @override
-  void initState() {
-    super.initState();
-    _startImageTransition();
-  }
-
-  void _startImageTransition() {
-    Timer.periodic(Duration(seconds: 1), (timer) {
-      if (_currentIdx < _imagePaths.length - 1) {
-        setState(() {
-          _currentIdx++;
-        });
-      } else {
-        timer.cancel();
-        Navigator.of(
-          context,
-        ).pushReplacement(MaterialPageRoute(builder: (context) => HomePage()));
-      }
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return AnimatedSwitcher(
-      duration: Duration(milliseconds: 500),
-      transitionBuilder: (Widget child, Animation<double> animation) {
-        return FadeTransition(opacity: animation, child: child);
-      },
-      child: Image.asset(
-        _imagePaths[_currentIdx],
-        key: ValueKey<int>(_currentIdx),
       ),
     );
   }
