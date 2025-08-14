@@ -37,7 +37,7 @@ class SplashScreen extends StatelessWidget {
                   alignment: Alignment.bottomRight,
                   child: GestureDetector(
                     onTap: () {
-                      Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => ShoePage()));
+                      Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => HomePage()));
                     },
                     child: Container(
                       height: 90,

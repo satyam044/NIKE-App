@@ -40,8 +40,6 @@ class _CardsContainerWidgetState extends State<CardsContainerWidget> {
           itemCount: cards.length,
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
-            mainAxisSpacing: 8,
-            crossAxisSpacing: 8,
           ),
           padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
           itemBuilder: (context, index) => CardWidget(card: cards[index]),
