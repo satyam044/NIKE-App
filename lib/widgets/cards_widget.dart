@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nike_app/models/card_model.dart';
+import 'package:nike_app/pages/shoe_page.dart';
 
 class CardWidget extends StatelessWidget {
   final CardModel card;
@@ -10,7 +11,7 @@ class CardWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        // navigate to product details
+        Navigator.push((context), MaterialPageRoute(builder: (context) => ShoePage(card)));
       },
       child: Container(
         margin: const EdgeInsets.all(8),
@@ -58,47 +59,37 @@ class CardWidget extends StatelessWidget {
                 bottom: 12,
                 left: 12,
                 right: 12,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    // Text info
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          card.product_name,
-                          style: const TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white,
+                child: Padding(
+                  padding: const EdgeInsets.only(right: 10),
+                  child: Row(
+                    children: [
+                      // Text info
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            card.product_name,
+                            style: const TextStyle(
+                              fontSize: 14,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                            ),
+                            maxLines: 1,
+                            overflow: TextOverflow.fade,
                           ),
-                          maxLines: 1,
-                          overflow: TextOverflow.ellipsis,
-                        ),
-                        const SizedBox(height: 4),
-                        Text(
-                          "\$${card.price}",
-                          style: const TextStyle(
-                            fontSize: 12,
-                            fontWeight: FontWeight.w500,
-                            color: Colors.white70,
+                          const SizedBox(height: 4),
+                          Text(
+                            "\$${card.price}",
+                            style: const TextStyle(
+                              fontSize: 12,
+                              fontWeight: FontWeight.w500,
+                              color: Colors.white70,
+                            ),
                           ),
-                        ),
-                      ],
-                    ),
-
-                    Container(
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: Colors.white,
+                        ],
                       ),
-                      child: IconButton(
-                        icon: const Icon(Icons.add, color: Colors.black),
-                        onPressed: () {
-                        },
-                      ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
             ],
